@@ -1,4 +1,5 @@
 const arrWithTextStrings = [
+  "12345",
   "First",
   // "22222",
   // "33333",
@@ -32,7 +33,7 @@ quoteInputElement.addEventListener("input", () => {
       characterSpan.classList.add("correct");
       characterSpan.classList.remove("incorrect");
 
-      keys[10].classList.add("active");
+      // keys[10].classList.add("active");
       // keys[i].classList.add("remove");
     } else {
       characterSpan.classList.remove("correct");
@@ -158,3 +159,44 @@ window.addEventListener("keyup", function (e) {
     }, 200);
   }
 });
+
+// -----------------------------------------------
+
+let one = document.getElementById("1");
+let two = document.getElementById("2");
+let three = document.getElementById("3");
+let four = document.getElementById("4");
+let five = document.getElementById("5");
+
+let input1 = document.getElementById("quoteInput");
+let currentQuoteSpans = document.getElementById("quoteDisplay");
+let currentQuote = currentQuoteSpans.innerText;
+
+console.log(currentQuote);
+if (input1.value.length == 0) {
+  one.classList.add("addedGreen");
+} else {
+  one.classList.remove("addedGreen");
+}
+input1.addEventListener("keyup", () => {
+  if (input1.value == 1) {
+    one.classList.remove("addedGreen");
+    two.classList.add("addedGreen");
+  }
+  if (input1.value == 12) {
+    two.classList.remove("addedGreen");
+    three.classList.add("addedGreen");
+  }
+  if (input1.value == 123) {
+    three.classList.remove("addedGreen");
+    four.classList.add("addedGreen");
+  }
+  if (input1.value == 1234) {
+    four.classList.remove("addedGreen");
+    five.classList.add("addedGreen");
+  } else {
+    five.classList.remove("addedGreen");
+  }
+});
+
+console.log(input1.value.length);

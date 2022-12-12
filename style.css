@@ -173,6 +173,11 @@ body {
 	animation: keys_animation 0.2s forwards;
 }
 
+.keys.addedGreen {
+	background-color: green;
+	color: #fff;
+}
+
 @keyframes keys_animation {
 	0% {
 		background-color: rgb(57, 40, 18);
