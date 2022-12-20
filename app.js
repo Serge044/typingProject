@@ -1,5 +1,6 @@
 const arrWithTextStrings = [
   "12345",
+  "1234567",
   "First",
   // "22222",
   // "33333",
@@ -11,6 +12,16 @@ const arrWithTextStrings = [
   // "99999",
   "Last",
 ];
+
+let input1 = document.getElementById("quoteInput");
+
+let one = document.getElementById("1");
+let two = document.getElementById("2");
+let three = document.getElementById("3");
+let four = document.getElementById("4");
+let five = document.getElementById("5");
+2;
+
 const quoteDisplayElement = document.getElementById("quoteDisplay");
 const quoteInputElement = document.getElementById("quoteInput");
 const timerElement = document.getElementById("timer");
@@ -39,7 +50,7 @@ quoteInputElement.addEventListener("input", () => {
       characterSpan.classList.remove("correct");
       characterSpan.classList.add("incorrect");
       correct = false;
-      keys[10].classList.remove("active");
+      // keys[10].classList.remove("active");
     }
   });
 
@@ -67,6 +78,58 @@ async function renderNextQuote(interval) {
   });
   quoteInputElement.value = null;
   console.log(quote);
+
+  // look here, the answer is somewhere below))
+
+  // first letter of quote
+  one.classList.add("addedGreen2");
+
+  // last letter of quote
+  five.classList.remove("addedGreen2");
+
+  window.addEventListener("keyup", function () {
+    // let quote2 = "12345";
+    one.classList.remove("addedGreen2");
+    for (let i = 0; i < keys.length; i++) {
+      if (input1.value == quote[0]) {
+        two.classList.add("addedGreen2");
+        three.classList.remove("addedGreen2");
+      }
+      if (input1.value == quote[0] + quote[1]) {
+        two.classList.remove("addedGreen2");
+        three.classList.add("addedGreen2");
+        four.classList.remove("addedGreen2");
+      }
+      if (input1.value == quote[0] + quote[1] + quote[2]) {
+        three.classList.remove("addedGreen2");
+        four.classList.add("addedGreen2");
+        five.classList.remove("addedGreen2");
+      }
+      if (input1.value == quote[0] + quote[1] + quote[2] + quote[3]) {
+        four.classList.remove("addedGreen2");
+        five.classList.add("addedGreen2");
+      }
+      if (input1.value == "") {
+        one.classList.add("addedGreen2");
+        two.classList.remove("addedGreen2");
+        three.classList.remove("addedGreen2");
+      }
+      if (input1.value.length >= 1 && input1.value[0] != quote[0]) {
+        one.classList.add("addedGreen2");
+        two.classList.remove("addedGreen2");
+        three.classList.remove("addedGreen2");
+      }
+      // here I need to remove classList from last letter of quote
+      if (input1.value == quote) {
+        one.classList.remove("addedGreen2");
+        two.classList.remove("addedGreen2");
+        three.classList.remove("addedGreen2");
+        four.classList.remove("addedGreen2");
+        five.classList.remove("addedGreen2");
+      }
+    }
+    console.log("At least it works");
+  });
 
   startTimer();
   nextLevel();
@@ -162,41 +225,34 @@ window.addEventListener("keyup", function (e) {
 
 // -----------------------------------------------
 
-let one = document.getElementById("1");
-let two = document.getElementById("2");
-let three = document.getElementById("3");
-let four = document.getElementById("4");
-let five = document.getElementById("5");
-
-let input1 = document.getElementById("quoteInput");
 let currentQuoteSpans = document.getElementById("quoteDisplay");
 let currentQuote = currentQuoteSpans.innerText;
 
-console.log(currentQuote);
-if (input1.value.length == 0) {
-  one.classList.add("addedGreen");
-} else {
-  one.classList.remove("addedGreen");
-}
-input1.addEventListener("keyup", () => {
-  if (input1.value == 1) {
-    one.classList.remove("addedGreen");
-    two.classList.add("addedGreen");
-  }
-  if (input1.value == 12) {
-    two.classList.remove("addedGreen");
-    three.classList.add("addedGreen");
-  }
-  if (input1.value == 123) {
-    three.classList.remove("addedGreen");
-    four.classList.add("addedGreen");
-  }
-  if (input1.value == 1234) {
-    four.classList.remove("addedGreen");
-    five.classList.add("addedGreen");
-  } else {
-    five.classList.remove("addedGreen");
-  }
-});
+// console.log(currentQuote);
+// if (input1.value.length == 0) {
+//   one.classList.add("addedGreen");
+// } else {
+//   one.classList.remove("addedGreen");
+// }
+// input1.addEventListener("keyup", () => {
+//   if (input1.value == 1) {
+//     one.classList.remove("addedGreen");
+//     two.classList.add("addedGreen");
+//   }
+//   if (input1.value == 12) {
+//     two.classList.remove("addedGreen");
+//     three.classList.add("addedGreen");
+//   }
+//   if (input1.value == 123) {
+//     three.classList.remove("addedGreen");
+//     four.classList.add("addedGreen");
+//   }
+//   if (input1.value == 1234) {
+//     four.classList.remove("addedGreen");
+//     five.classList.add("addedGreen");
+//   } else {
+//     five.classList.remove("addedGreen");
+//   }
+// });
 
-console.log(input1.value.length);
+// console.log(input1.value.length);

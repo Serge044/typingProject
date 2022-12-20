@@ -178,6 +178,11 @@ body {
 	color: #fff;
 }
 
+.keys.addedGreen2 {
+	background-color: rgb(111, 240, 111);
+	color: palevioletred;
+}
+
 @keyframes keys_animation {
 	0% {
 		background-color: rgb(57, 40, 18);
