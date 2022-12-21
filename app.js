@@ -59,7 +59,7 @@ quoteInputElement.addEventListener("input", () => {
 
 let phraseCounter = -1;
 
-async function renderNextQuote(interval) {
+async function renderNextQuote() {
   phraseCounter += 1;
   if (arrWithTextStrings.length + 1 === phraseCounter + 1) {
     console.log("Final.");
@@ -81,6 +81,8 @@ async function renderNextQuote(interval) {
 
   // look here, the answer is somewhere below))
 
+  // hint for future: last symbol -1
+
   // first letter of quote
   one.classList.add("addedGreen2");
 
@@ -90,44 +92,44 @@ async function renderNextQuote(interval) {
   window.addEventListener("keyup", function () {
     // let quote2 = "12345";
     one.classList.remove("addedGreen2");
-    for (let i = 0; i < keys.length; i++) {
-      if (input1.value == quote[0]) {
-        two.classList.add("addedGreen2");
-        three.classList.remove("addedGreen2");
-      }
-      if (input1.value == quote[0] + quote[1]) {
-        two.classList.remove("addedGreen2");
-        three.classList.add("addedGreen2");
-        four.classList.remove("addedGreen2");
-      }
-      if (input1.value == quote[0] + quote[1] + quote[2]) {
-        three.classList.remove("addedGreen2");
-        four.classList.add("addedGreen2");
-        five.classList.remove("addedGreen2");
-      }
-      if (input1.value == quote[0] + quote[1] + quote[2] + quote[3]) {
-        four.classList.remove("addedGreen2");
-        five.classList.add("addedGreen2");
-      }
-      if (input1.value == "") {
-        one.classList.add("addedGreen2");
-        two.classList.remove("addedGreen2");
-        three.classList.remove("addedGreen2");
-      }
-      if (input1.value.length >= 1 && input1.value[0] != quote[0]) {
-        one.classList.add("addedGreen2");
-        two.classList.remove("addedGreen2");
-        three.classList.remove("addedGreen2");
-      }
-      // here I need to remove classList from last letter of quote
-      if (input1.value == quote) {
-        one.classList.remove("addedGreen2");
-        two.classList.remove("addedGreen2");
-        three.classList.remove("addedGreen2");
-        four.classList.remove("addedGreen2");
-        five.classList.remove("addedGreen2");
-      }
+    // for (let i = 0; i < quote.length; i++) {
+    if (input1.value == quote[0]) {
+      two.classList.add("addedGreen2");
+      three.classList.remove("addedGreen2");
     }
+    if (input1.value == quote[0] + quote[1]) {
+      two.classList.remove("addedGreen2");
+      three.classList.add("addedGreen2");
+      four.classList.remove("addedGreen2");
+    }
+    if (input1.value == quote[0] + quote[1] + quote[2]) {
+      three.classList.remove("addedGreen2");
+      four.classList.add("addedGreen2");
+      five.classList.remove("addedGreen2");
+    }
+    if (input1.value == quote[0] + quote[1] + quote[2] + quote[3]) {
+      four.classList.remove("addedGreen2");
+      five.classList.add("addedGreen2");
+    }
+    if (input1.value == "") {
+      one.classList.add("addedGreen2");
+      two.classList.remove("addedGreen2");
+      three.classList.remove("addedGreen2");
+    }
+    if (input1.value.length >= 1 && input1.value[0] != quote[0]) {
+      one.classList.add("addedGreen2");
+      two.classList.remove("addedGreen2");
+      three.classList.remove("addedGreen2");
+    }
+    // here I need to remove classList from last letter of quote
+    if (input1.value == quote) {
+      one.classList.remove("addedGreen2");
+      two.classList.remove("addedGreen2");
+      three.classList.remove("addedGreen2");
+      four.classList.remove("addedGreen2");
+      five.classList.remove("addedGreen2");
+    }
+    // }
     console.log("At least it works");
   });
 
