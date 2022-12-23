@@ -1,11 +1,4 @@
-const arrWithTextStrings = [
-  "45678",
-  "HELLO",
-  "12345",
-  "1234567",
-  "First",
-  "Last",
-];
+const arrWithTextStrings = ["hello", "world", "its", "serge044", "finish"];
 
 let input1 = document.getElementById("quoteInput");
 
@@ -98,14 +91,10 @@ quoteInputElement.addEventListener("input", () => {
     } else if (character === characterSpan.innerText) {
       characterSpan.classList.add("correct");
       characterSpan.classList.remove("incorrect");
-
-      // keys[10].classList.add("active");
-      // keys[i].classList.add("remove");
     } else {
       characterSpan.classList.remove("correct");
       characterSpan.classList.add("incorrect");
       correct = false;
-      // keys[10].classList.remove("active");
     }
   });
 
@@ -118,6 +107,10 @@ async function renderNextQuote() {
   phraseCounter += 1;
   if (arrWithTextStrings.length + 1 === phraseCounter + 1) {
     console.log("Final.");
+    // remove class active from last letter
+    for (let i = 0; i < keys.length; i++) {
+      keys[i].classList.remove("addedGreen2");
+    }
     counterElement.innerText = `Congrats! You reach end of this typing project!`;
 
     timerElement.remove();
@@ -135,35 +128,39 @@ async function renderNextQuote() {
   console.log("Current quote: " + quote);
 
   // think about do I need Arr or not -------------------------
-  let newArr = [];
-  let a = keys[20];
-  console.log("Capital: ", a.getAttribute("keyname"));
-  console.log("Lower: ", a.getAttribute("lowercasename"));
-
-  // document.querySelector("[myAttribute='aValue']");
-  // here --------------------------------------------------------- 139
+  // let newArr = [];
+  // let a = keys[20];
+  // console.log("Capital: ", a.getAttribute("keyname"));
+  // console.log("Lower: ", a.getAttribute("lowercasename"));
 
   // // hint for future: last symbol -1
 
-  // // first letter of quote
+  // // add class active on first letter of quote
   if (input1.value == "") {
     for (let i = 0; i < keys.length; i++) {
-      // console.log(keys[i].innerHTML);
-      // or not inner HTML but smth else
-      if (keys[i].innerHTML == quote[0]) {
+      if (keys[i].getAttribute("lowerCaseName") == quote[0]) {
         keys[i].classList.add("addedGreen2");
-        newArr.push(keys[i].innerHTML);
-        // console.log(newArr);
-        // console.log(keys[i], "THIS!");
       }
     }
   }
 
   window.addEventListener("keyup", function () {
+    if (input1.value == "") {
+      for (let i = 0; i < keys.length; i++) {
+        keys[i].classList.remove("addedGreen2");
+      }
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[0]) {
+          keys[i].classList.add("addedGreen2");
+        }
+      }
+    }
     if (input1.value == quote[0]) {
       for (let i = 0; i < keys.length; i++) {
-        // console.log(keys[i].innerHTML);
-        if (keys[i].innerHTML == quote[1]) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[1]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
           keys[i].classList.add("addedGreen2");
         }
       }
@@ -171,7 +168,10 @@ async function renderNextQuote() {
 
     if (input1.value == quote[0] + quote[1]) {
       for (let i = 0; i < keys.length; i++) {
-        if (keys[i].innerHTML == quote[2]) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[2]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
           keys[i].classList.add("addedGreen2");
         }
       }
@@ -179,7 +179,10 @@ async function renderNextQuote() {
 
     if (input1.value == quote[0] + quote[1] + quote[2]) {
       for (let i = 0; i < keys.length; i++) {
-        if (keys[i].innerHTML == quote[3]) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[3]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
           keys[i].classList.add("addedGreen2");
         }
       }
@@ -187,10 +190,116 @@ async function renderNextQuote() {
 
     if (input1.value == quote[0] + quote[1] + quote[2] + quote[3]) {
       for (let i = 0; i < keys.length; i++) {
-        // console.log(keys[i].innerHTML);
-        if (keys[i].innerHTML == quote[4]) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[4]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
           keys[i].classList.add("addedGreen2");
-          // console.log(keys[i], "THIS!");
+        }
+      }
+    }
+
+    if (input1.value == quote[0] + quote[1] + quote[2] + quote[3] + quote[4]) {
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[5]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          keys[i].classList.add("addedGreen2");
+        }
+      }
+    }
+
+    if (
+      input1.value ==
+      quote[0] + quote[1] + quote[2] + quote[3] + quote[4] + quote[5]
+    ) {
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[6]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          keys[i].classList.add("addedGreen2");
+        }
+      }
+    }
+
+    if (
+      input1.value ==
+      quote[0] + quote[1] + quote[2] + quote[3] + quote[4] + quote[5] + quote[6]
+    ) {
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[7]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          keys[i].classList.add("addedGreen2");
+        }
+      }
+    }
+
+    if (
+      input1.value ==
+      quote[0] +
+        quote[1] +
+        quote[2] +
+        quote[3] +
+        quote[4] +
+        quote[5] +
+        quote[6] +
+        quote[7]
+    ) {
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[8]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          keys[i].classList.add("addedGreen2");
+        }
+      }
+    }
+
+    if (
+      input1.value ==
+      quote[0] +
+        quote[1] +
+        quote[2] +
+        quote[3] +
+        quote[4] +
+        quote[5] +
+        quote[6] +
+        quote[7] +
+        quote[8]
+    ) {
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[9]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          keys[i].classList.add("addedGreen2");
+        }
+      }
+    }
+
+    if (
+      input1.value ==
+      quote[0] +
+        quote[1] +
+        quote[2] +
+        quote[3] +
+        quote[4] +
+        quote[5] +
+        quote[6] +
+        quote[7] +
+        quote[8] +
+        quote[9]
+    ) {
+      for (let i = 0; i < keys.length; i++) {
+        if (keys[i].getAttribute("lowerCaseName") == quote[10]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          keys[i].classList.add("addedGreen2");
         }
       }
     }

@@ -50,6 +50,7 @@ body, textarea {
 }
 
 .quote-input {
+	/* display: flex; */
 	background-color: rgb(255, 235, 205);
 	border: 2px solid gray;
 	outline: none;
