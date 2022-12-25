@@ -1,4 +1,4 @@
-const arrWithTextStrings = [".yo1 Hello", "world", "its", "serge044", "finish"];
+const arrWithTextStrings = ["Hello-,", "WorlD.", "Its", "Serge044.", "Finish."];
 
 let input1 = document.getElementById("quoteInput");
 
@@ -141,14 +141,17 @@ async function renderNextQuote() {
       if (keys[i].getAttribute("lowerCaseName") == quote[0]) {
         keys[i].classList.add("addedGreen2");
       }
-      if (keys[i].getAttribute("keyname") == quote[0]) {
+      if (
+        keys[i].getAttribute("keyname") == quote[0] &&
+        keys[i].getAttribute("lowerCaseName") != keys[i].getAttribute("keyname")
+      ) {
         shift_left.classList.add("addedGreen2");
         keys[i].classList.add("addedGreen2");
       }
     }
   }
 
-  // fix cases with .,?/1234567890 and similar
+  // fix cases with ?'"":{}|+!@#$%*() and similar, maybe change virtual keyboard when shift is pressed.
 
   window.addEventListener("keyup", function () {
     if (input1.value == "") {
@@ -159,15 +162,23 @@ async function renderNextQuote() {
         if (keys[i].getAttribute("lowerCaseName") == quote[0]) {
           keys[i].classList.add("addedGreen2");
         }
-        if (keys[i].getAttribute("keyname") == quote[0]) {
+
+        if (
+          keys[i].getAttribute("keyname") == quote[0] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
           shift_left.classList.add("addedGreen2");
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[0]) {
-          shift_left.classList.add("addedGreen2");
-          keys[i].classList.add("addedGreen2");
-        }
+        // if (keys[i].getAttribute("keyname") == quote[0]) {
+        //   shift_left.classList.add("addedGreen2");
+        //   keys[i].classList.add("addedGreen2");
+        // }
       }
     }
     if (input1.value == quote[0]) {
@@ -179,7 +190,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[1]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[1] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -205,7 +220,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[2]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[2] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -213,13 +232,13 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[2]) {
-          for (let i = 0; i < keys.length; i++) {
-            keys[i].classList.remove("addedGreen2");
-          }
-          shift_left.classList.add("addedGreen2");
-          keys[i].classList.add("addedGreen2");
-        }
+        // if (keys[i].getAttribute("keyname") == quote[2]) {
+        //   for (let i = 0; i < keys.length; i++) {
+        //     keys[i].classList.remove("addedGreen2");
+        //   }
+        //   shift_left.classList.add("addedGreen2");
+        //   keys[i].classList.add("addedGreen2");
+        // }
 
         if (" " == quote[2]) {
           for (let i = 0; i < keys.length; i++) {
@@ -239,7 +258,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[3]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[3] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -265,7 +288,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[4]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[4] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -291,7 +318,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[5]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[5] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -320,7 +351,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[6]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[6] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -349,7 +384,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[7]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[7] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -385,7 +424,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[8]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[8] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -422,7 +465,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[9]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[9] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
@@ -460,7 +507,11 @@ async function renderNextQuote() {
           keys[i].classList.add("addedGreen2");
         }
 
-        if (keys[i].getAttribute("keyname") == quote[10]) {
+        if (
+          keys[i].getAttribute("keyname") == quote[10] &&
+          keys[i].getAttribute("lowerCaseName") !=
+            keys[i].getAttribute("keyname")
+        ) {
           for (let i = 0; i < keys.length; i++) {
             keys[i].classList.remove("addedGreen2");
           }
