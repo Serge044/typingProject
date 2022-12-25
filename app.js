@@ -1,4 +1,4 @@
-const arrWithTextStrings = ["hello", "world", "its", "serge044", "finish"];
+const arrWithTextStrings = [".yo1 Hello", "world", "its", "serge044", "finish"];
 
 let input1 = document.getElementById("quoteInput");
 
@@ -141,8 +141,14 @@ async function renderNextQuote() {
       if (keys[i].getAttribute("lowerCaseName") == quote[0]) {
         keys[i].classList.add("addedGreen2");
       }
+      if (keys[i].getAttribute("keyname") == quote[0]) {
+        shift_left.classList.add("addedGreen2");
+        keys[i].classList.add("addedGreen2");
+      }
     }
   }
+
+  // fix cases with .,?/1234567890 and similar
 
   window.addEventListener("keyup", function () {
     if (input1.value == "") {
@@ -151,6 +157,15 @@ async function renderNextQuote() {
       }
       for (let i = 0; i < keys.length; i++) {
         if (keys[i].getAttribute("lowerCaseName") == quote[0]) {
+          keys[i].classList.add("addedGreen2");
+        }
+        if (keys[i].getAttribute("keyname") == quote[0]) {
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (keys[i].getAttribute("keyname") == quote[0]) {
+          shift_left.classList.add("addedGreen2");
           keys[i].classList.add("addedGreen2");
         }
       }
@@ -163,6 +178,21 @@ async function renderNextQuote() {
           }
           keys[i].classList.add("addedGreen2");
         }
+
+        if (keys[i].getAttribute("keyname") == quote[1]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[1]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
+        }
       }
     }
 
@@ -173,6 +203,29 @@ async function renderNextQuote() {
             keys[i].classList.remove("addedGreen2");
           }
           keys[i].classList.add("addedGreen2");
+        }
+
+        if (keys[i].getAttribute("keyname") == quote[2]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (keys[i].getAttribute("keyname") == quote[2]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[2]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
         }
       }
     }
@@ -185,6 +238,21 @@ async function renderNextQuote() {
           }
           keys[i].classList.add("addedGreen2");
         }
+
+        if (keys[i].getAttribute("keyname") == quote[3]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[3]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
+        }
       }
     }
 
@@ -196,6 +264,21 @@ async function renderNextQuote() {
           }
           keys[i].classList.add("addedGreen2");
         }
+
+        if (keys[i].getAttribute("keyname") == quote[4]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[4]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
+        }
       }
     }
 
@@ -206,6 +289,21 @@ async function renderNextQuote() {
             keys[i].classList.remove("addedGreen2");
           }
           keys[i].classList.add("addedGreen2");
+        }
+
+        if (keys[i].getAttribute("keyname") == quote[5]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[5]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
         }
       }
     }
@@ -221,6 +319,21 @@ async function renderNextQuote() {
           }
           keys[i].classList.add("addedGreen2");
         }
+
+        if (keys[i].getAttribute("keyname") == quote[6]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[6]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
+        }
       }
     }
 
@@ -234,6 +347,21 @@ async function renderNextQuote() {
             keys[i].classList.remove("addedGreen2");
           }
           keys[i].classList.add("addedGreen2");
+        }
+
+        if (keys[i].getAttribute("keyname") == quote[7]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[7]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
         }
       }
     }
@@ -255,6 +383,21 @@ async function renderNextQuote() {
             keys[i].classList.remove("addedGreen2");
           }
           keys[i].classList.add("addedGreen2");
+        }
+
+        if (keys[i].getAttribute("keyname") == quote[8]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[8]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
         }
       }
     }
@@ -278,6 +421,21 @@ async function renderNextQuote() {
           }
           keys[i].classList.add("addedGreen2");
         }
+
+        if (keys[i].getAttribute("keyname") == quote[9]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[9]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
+        }
       }
     }
 
@@ -300,6 +458,21 @@ async function renderNextQuote() {
             keys[i].classList.remove("addedGreen2");
           }
           keys[i].classList.add("addedGreen2");
+        }
+
+        if (keys[i].getAttribute("keyname") == quote[10]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          shift_left.classList.add("addedGreen2");
+          keys[i].classList.add("addedGreen2");
+        }
+
+        if (" " == quote[10]) {
+          for (let i = 0; i < keys.length; i++) {
+            keys[i].classList.remove("addedGreen2");
+          }
+          spaceKey.classList.add("addedGreen2");
         }
       }
     }
